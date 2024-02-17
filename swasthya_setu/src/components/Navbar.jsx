@@ -33,6 +33,7 @@ function Navbar() {
 
       {/* Desktop */}
       <ul className="navbar-items">
+        <h className="navbar-title a">Swasthya Setu</h>
         <li>
           <Link to="/" className="navbar-links">
             Home

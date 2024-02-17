@@ -14,7 +14,7 @@ function Home() {
     <div className="home-section">
       <Navbar />
       {/* 
-      <Hero />
+      <Hero/>
       <Info />
       <About /> */}
       <BookAppointment />

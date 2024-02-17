@@ -54,7 +54,7 @@ function Login() {
   const userLogin = async ({ email, password }) => {
     return new Promise((resolve, reject) => {
       if (email === "test@email.com" && password === "password") {
-        navigate("/");
+        navigate("/user");
       } else {
         reject();
       }

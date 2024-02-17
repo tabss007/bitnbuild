@@ -11,8 +11,8 @@ import "../styles/BookAppointment.css";
 function BookAppointment() {
   const navigate = useNavigate();
 
-  const handleBookAppointmentClick = () => {
-    navigate("/appointment");
+  const handleGetStartedClick = () => {
+    navigate("/login");
   };
 
   return (
@@ -22,7 +22,7 @@ function BookAppointment() {
       </div>
 
       <div className="ba-text-content">
-        {/* <h3 className="ba-title">
+        <h3 className="ba-title">
           <span>Why Choose Health</span>
         </h3>
         <p className="ba-description">
@@ -33,24 +33,24 @@ function BookAppointment() {
         </p>
 
         <p className="ba-checks ba-check-first">
-          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#1E8FFD" }} /> Best Professional Doctors
+          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "A2D729" }} /> Best Professional Doctors
         </p>
         <p className="ba-checks">
-          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#1E8FFD" }} /> Emergency Care
+          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#A2D729" }} /> Emergency Care
         </p>
         <p className="ba-checks">
-          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#1E8FFD" }} /> 24/7 Support Live Chat
+          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#A2D729" }} /> 24/7 Support Live Chat
         </p>
         <p className="ba-checks ba-check-last">
-          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#1E8FFD" }} /> Enrollment Easy and Quick
-        </p> */}
+          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#A2D729" }} /> Enrollment Easy and Quick
+        </p>
 
         <button
           className="text-appointment-btn"
           type="button"
-          onClick={handleBookAppointmentClick}
+          onClick={handleGetStartedClick}
         >
-          <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
+          <FontAwesomeIcon icon={faCalendarCheck} /> Get Started
         </button>
       </div>
     </div>
