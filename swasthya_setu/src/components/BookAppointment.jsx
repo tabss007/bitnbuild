@@ -22,7 +22,7 @@ function BookAppointment() {
       </div>
 
       <div className="ba-text-content">
-        <h3 className="ba-title">
+        {/* <h3 className="ba-title">
           <span>Why Choose Health</span>
         </h3>
         <p className="ba-description">
@@ -43,7 +43,7 @@ function BookAppointment() {
         </p>
         <p className="ba-checks ba-check-last">
           <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#1E8FFD" }} /> Enrollment Easy and Quick
-        </p>
+        </p> */}
 
         <button
           className="text-appointment-btn"

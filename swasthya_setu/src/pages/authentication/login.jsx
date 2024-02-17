@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link as ReactRouterLink } from 'react-router-dom'
+import { Link as ChakraLink, LinkProps } from '@chakra-ui/react'
 import {
   Box,
   Button,
@@ -19,6 +21,7 @@ import {
   useColorMode,
   CircularProgress,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const { colorMode } = useColorMode();
@@ -47,15 +50,14 @@ function Login() {
     }
   };
 
+  const navigate = useNavigate();
   const userLogin = async ({ email, password }) => {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (email === "test@email.com" && password === "password") {
-          resolve();
-        } else {
-          reject();
-        }
-      }, 1000);
+      if (email === "test@email.com" && password === "password") {
+        navigate("/");
+      } else {
+        reject();
+      }
     });
   };
 
@@ -163,9 +165,12 @@ function Login() {
                           color="teal"
                         />
                       ) : (
-                        "Sign In"
+                        "Login"
                       )}
                     </Button>
+                    <ChakraLink as={ReactRouterLink} to="/signUp">
+                      SignUp
+                    </ChakraLink>
                   </Stack>
                 </form>
               </CardBody>

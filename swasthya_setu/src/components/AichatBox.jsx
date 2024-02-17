@@ -12,13 +12,18 @@ const AichatBox = () => {
   return (
     <div>
       <Box
-        as="button"
-        borderRadius="md"
-        bg="tomato"
-        color="white"
-        px={4}
-        h={10}
+        alignItems='center'
+        className="fixed-button"
         onClick={handleAiChatClick}
+        position={"sticky"}
+        bottom="70px"
+        right="20px"
+        backgroundColor="#007bff"
+        color="white"
+        borderRadius="19px"
+        zIndex="1000"
+        p={3}
+        cursor="pointer"
       >
         Let AI assist you.
       </Box>

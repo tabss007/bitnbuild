@@ -1,5 +1,5 @@
 import React from "react";
-// import Navbar from "../Components/Navbar";
+import Navbar from "../../components/Navbar";
 // import Hero from "../Components/Hero";
 // import Info from "../Components/Info";
 // import About from "../Components/About";
@@ -12,7 +12,8 @@ import AichatBox from "../../components/AichatBox";
 function Home() {
   return (
     <div className="home-section">
-      {/* <Navbar />
+      <Navbar />
+      {/* 
       <Hero />
       <Info />
       <About /> */}
