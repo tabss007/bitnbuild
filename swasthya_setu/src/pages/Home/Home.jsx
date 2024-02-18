@@ -18,7 +18,7 @@ function Home() {
       <Info />
       <About /> */}
       <BookAppointment />
-      <AichatBox/>
+      {/* <AichatBox/> */}
       {/* <Reviews />
       <Doctors />
       <Footer /> */}
