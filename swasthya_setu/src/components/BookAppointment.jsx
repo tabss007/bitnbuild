@@ -33,7 +33,7 @@ function BookAppointment() {
         </p>
 
         <p className="ba-checks ba-check-first">
-          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "A2D729" }} /> Best Professional Doctors
+          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "A2D729"}} /> Best Professional Doctors
         </p>
         <p className="ba-checks">
           <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#A2D729" }} /> Emergency Care

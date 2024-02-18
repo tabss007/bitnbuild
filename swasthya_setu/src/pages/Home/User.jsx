@@ -26,7 +26,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarCheck,
   faTablets,
-  fa5x,
 } from "@fortawesome/free-solid-svg-icons";
 const User = () => {
   return (
@@ -73,7 +72,7 @@ const User = () => {
               <Link>Prescription Order</Link>
             </Box>
             <Box h="40px">
-              <Link>Community</Link>
+              <Link to="/Community">Community</Link>
             </Box>
           </VStack>
         </Box>
