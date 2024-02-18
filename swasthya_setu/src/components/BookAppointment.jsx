@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleCheck,
   faCalendarCheck,
+  faShieldHalved
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate  } from "react-router-dom";
 import "../styles/BookAppointment.css";
@@ -17,16 +18,13 @@ function BookAppointment() {
 
   return (
     <div className="ba-section">
-      <div className="ba-image-content">
-        {/* <img src={Doctor} alt="Doctor Group" className="ba-image1" /> */}
-      </div>
 
       <div className="ba-text-content">
         <h3 className="ba-title">
-          <span>Why Choose Health</span>
+          <span>Why Choose Swasthya Setu</span>
         </h3>
         <p className="ba-description">
-          Discover the reasons to choose Health Plus for your healthcare needs.
+          Discover the reasons to choose us for your healthcare needs.
           Experience expert care, convenience, and personalized solutions,
           making your well-being our top priority. Join us on a journey to
           better health and a happier life.
@@ -50,7 +48,7 @@ function BookAppointment() {
           type="button"
           onClick={handleGetStartedClick}
         >
-          <FontAwesomeIcon icon={faCalendarCheck} /> Get Started
+          <FontAwesomeIcon icon={faShieldHalved} /> Get Started
         </button>
       </div>
     </div>

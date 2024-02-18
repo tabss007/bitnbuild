@@ -59,41 +59,75 @@ const User = () => {
             spacing={5}
             align="stretch"
           >
-            <Box h="40px">
+            <Box
+              _hover={{
+                color: "teal.500",
+              }}
+              h="40px"
+            >
               <Link>Dashboard</Link>
             </Box>
-            <Box h="40px">
+            <Box
+              _hover={{
+                color: "teal.500",
+              }}
+              h="40px"
+            >
               <Link to="/Appointment">Schedule Appointment</Link>
             </Box>
-            <Box h="40px">
+            <Box
+              _hover={{
+                color: "teal.500",
+              }}
+              h="40px"
+            >
               <Link>Book Consultation</Link>
             </Box>
-            <Box h="40px">
+            <Box
+              _hover={{
+                color: "teal.500",
+              }}
+              h="40px"
+            >
               <Link>Prescription Order</Link>
             </Box>
-            <Box h="40px">
+            <Box
+              _hover={{
+                color: "teal.500",
+              }}
+              h="40px"
+            >
               <Link to="/Community">Community</Link>
             </Box>
           </VStack>
         </Box>
       </Stack>
-      <Grid templateColumns="repeat(2, 1fr)" gap={2} marginTop={2}>
+      <Grid height={300} templateColumns="repeat(2,1fr)" gap={2} margin={2}>
         <GridItem>
-          <Box w={350}>
+          <Box w={352}>
             <Card minH="300px" borderWidth="1px">
               <CardBody>
-                <Center>
-                  <FontAwesomeIcon icon={faCalendarCheck} fontSize="40px" />{" "}
-                </Center>
-                <Heading textAlign={"center"}>Appointments</Heading>
-                <Center>
-                  <Text textAlign="justify">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Temporibus odio ea accusamus quo voluptatem repellat
-                    repudiandae odit minus deleniti fugiat, laborum, ducimus
-                    deserunt? Quos porro debitis officiis, dignissimos ex iste!
-                  </Text>
-                </Center>
+                <Stack>
+                  <Center>
+                    <FontAwesomeIcon icon={faCalendarCheck} fontSize="40px" />{" "}
+                  </Center>
+                  <Heading marginTop={5} textAlign={"center"}>
+                    Appointments
+                  </Heading>
+                  <Center>
+                    <Text marginTop={10} textAlign="justify">
+                      Previously Booked Appointments: 4
+                    </Text>
+                    </Center>
+                    <Center>
+                    <Text>
+                      <Link color={"1C7293"}>
+                        Click
+                      </Link>
+                       {" "}To see your past appointments
+                    </Text>
+                    </Center>
+                </Stack>
               </CardBody>
             </Card>
           </Box>
@@ -120,8 +154,11 @@ const User = () => {
             </Card>
           </Box>
         </GridItem>
+        <GridItem flex={1} colSpan={2}>
+            <Text textAlign={"center"}>Map</Text>
+        </GridItem>
       </Grid>
-      <Box minH={726} marginLeft={2} flex="1" bg={"white"}>
+      <Box minH={726}  flex="1" bg={"white"}>
         <Stack>
           <Heading textAlign={"center"} p={2} color={"black"} size={"md"}>
             Appointments Dates

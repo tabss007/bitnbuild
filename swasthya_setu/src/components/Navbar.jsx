@@ -61,14 +61,14 @@ function Navbar() {
         </li>
       </ul>
 
-      <button
+      {/* <button
         className="navbar-btn"
         type="button"
         disabled={isButtonDisabled}
         onClick={handleRecordClick}
       >
          Patient Record
-      </button>
+      </button> */}
 
       {/* Mobile */}
       <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
