@@ -37,17 +37,26 @@ function Login() {
     event.preventDefault();
     setIsLoading(true);
 
-    try {
-      await userLogin({ email, password });
-      setSuccess("Logged in successfully!");
-      setIsLoading(false);
-      setIsLoggedIn(true);
-    } catch (error) {
-      setError("Invalid username or password!");
-      setIsLoading(false);
-      setEmail("");
-      setPassword("");
-    }
+    fetch("http://localhost:5000/login",{
+      "method":"POST",
+      "headers":{
+        "Accept":"*/*",
+        "Content-Type":"application/json"
+      },
+      "body":JSON.stringify({email,password})
+    }).then(res=> res.json()).then(data => {if(data.status === 'ok'){navigate("/user");}}).catch(err => {console.log(err)})
+    // try {
+    //   await userLogin({ email, password });
+    //   setSuccess("Logged in successfully!");
+    //   setIsLoading(false);
+    //   setIsLoggedIn(true);
+    // } catch (error) {
+    //   setError("Invalid username or password!");
+    //   setIsLoading(false);
+    //   setEmail("");
+    //   setPassword("");
+    // }
+
   };
 
   const navigate = useNavigate();

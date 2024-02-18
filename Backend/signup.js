@@ -5,14 +5,23 @@ const router = express.Router();
 const Patient = require('./Models/Patient')
 
 router.post('/signup',async (req,res)=>{
-    const data = req.body;
+    const {email,password,fname,lname,contact} = req.body;
     //console.log(email);
     
-    Patient.insertOne(data).then(val =>{
-        console.log("Registered successfullly");
-    }).catch(err =>{
-        console.log(err);
+    Patient.create({
+        email: email,
+        password: password,
+        fname:fname,
+        lname:lname,
+        contact:contact
     })
+    .then(newPatient => {
+        console.log('New patient created:', newPatient);
+        res.send({status:'ok'});
+    })
+    .catch(error => {
+        console.error('Error creating new patient:', error);
+    });
 })
 
 module.exports = router;

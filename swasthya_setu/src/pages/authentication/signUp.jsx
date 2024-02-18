@@ -27,7 +27,9 @@ function Signup() {
   const { colorMode } = useColorMode();
 
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [contact, setContact] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState("");
@@ -39,17 +41,25 @@ function Signup() {
     event.preventDefault();
     setIsLoading(true);
 
-    try {
-      await userLogin({ email, password });
-      setSuccess("Signed in successfully!");
-      setIsLoading(false);
-      setIsSignedIn(true);
-    } catch (error) {
-      setError("Invalid username or password!");
-      setIsLoading(false);
-      setEmail("");
-      setPassword("");
-    }
+    fetch("http://localhost:5000/signup",{
+      "method":"POST",
+      "headers":{
+        "Accept":"*/*",
+        "Content-Type":"application/json"
+      },
+      "body":JSON.stringify({email,password,fname,lname,contact})
+    }).then(res=> res.json()).then(data => {if(data.status === 'ok'){navigate("/user");}}).catch(err => {console.log(err)})
+    // try {
+    //   await userLogin({ email, password });
+    //   setSuccess("Signed in successfully!");
+    //   setIsLoading(false);
+    //   setIsSignedIn(true);
+    // } catch (error) {
+    //   setError("Invalid username or password!");
+    //   setIsLoading(false);
+    //   setEmail("");
+    //   setPassword("");
+    // }
   };
 
   const navigate = useNavigate();
@@ -83,6 +93,7 @@ function Signup() {
               size="lg"
               borderRadius={8}
               boxShadow="lg"
+              marginTop={20}
             >
               <CardBody>
                 <form onSubmit={handleSubmit}>
@@ -105,7 +116,7 @@ function Signup() {
                         size="sm"
                         color={colorMode === "dark" ? "black" : "black"}
                       >
-                        User Name
+                        First Name
                       </FormLabel>
                       <Input
                         type="text"
@@ -114,9 +125,29 @@ function Signup() {
                         size="sm"
                         borderRadius="6px"
                         color={colorMode === "dark" ? "black" : "black"}
-                        value={name}
+                        value={fname}
                         onChange={(e) => {
-                          setName(e.target.value);
+                          setFname(e.target.value);
+                        }}
+                      />
+                    </FormControl>
+                      <FormControl isRequired>
+                      <FormLabel
+                        size="sm"
+                        color={colorMode === "dark" ? "black" : "black"}
+                      >
+                        Last Name
+                      </FormLabel>
+                      <Input
+                        type="text"
+                        bg="white"
+                        borderColor="#d8dee4"
+                        size="sm"
+                        borderRadius="6px"
+                        color={colorMode === "dark" ? "black" : "black"}
+                        value={lname}
+                        onChange={(e) => {
+                          setLname(e.target.value);
                         }}
                       />
                     </FormControl>
@@ -177,6 +208,27 @@ function Signup() {
                         value={confirmPassword}
                         onChange={(e) => {
                             setConfirmPassword(e.target.value);
+                        }}
+                      />
+                    </FormControl>
+            
+                      <FormControl isRequired>
+                      <FormLabel
+                        size="sm"
+                        color={colorMode === "dark" ? "black" : "black"}
+                      >
+                        Contact
+                      </FormLabel>
+                      <Input
+                        type="number"
+                        bg="white"
+                        borderColor="#d8dee4"
+                        size="sm"
+                        borderRadius="6px"
+                        color={colorMode === "dark" ? "black" : "black"}
+                        value={contact}
+                        onChange={(e) => {
+                          setContact(e.target.value);
                         }}
                       />
                     </FormControl>
